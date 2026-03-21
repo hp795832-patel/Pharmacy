@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - MediCare Pharmacy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a href="index.html"><img src="image/logo.png" class="tanishka-logo" alt="logo" /></a>
+                <a class="navbar-brand" href="index.html">MediCare Pharmacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="products.html?category=all">All Products</a>
+                                <a class="dropdown-item" href="products.html?category=prescription">Prescription Medicines</a>
+                                <a class="dropdown-item" href="products.html?category=otc">Over-the-Counter</a>
+                                <a class="dropdown-item" href="products.html?category=vitamins">Vitamins & Supplements</a>
+                                <a class="dropdown-item" href="products.html?category=personal">Personal Care</a>
+                                <a class="dropdown-item" href="products.html?category=baby">Baby Care</a>
+                                <a class="dropdown-item" href="products.html?category=elderly">Elderly Care</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+            
+                    <div class="search-box me-3">
+                        <input type="text" placeholder="Search medicines...">
+                        <button type="button" title="Search">
+                            <i class="fas fa-search"></i>
+                            <span class="visually-hidden">Search</span>
+                        </button>
+                    </div>
+                    
+                    <div class="dropdown ms-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle fs-4 text-primary"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                            <li><h6 class="dropdown-header">My Account</h6></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i> Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus me-2"></i> Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-account.html"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="bi bi-box-seam me-2"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="prescriptions.html"><i class="bi bi-file-earmark-medical me-2"></i> My Prescriptions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-icon position-relative ms-3" title="View Cart">
+                        <i class="bi bi-cart3 fs-4"></i>
+                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        <span class="visually-hidden">View Cart</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="mb-3 fw-bold">Health Blog</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="featured-post mb-5">
+                        <div class="card border-0 shadow-sm">
+                            <img src="image/HEALTH-BLOG.jpg" class="card-img-top" alt="Featured Blog Post">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <span class="badge bg-primary me-2">Featured</span>
+                                    <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> June 15, 2023</span>
+                                </div>
+                                <h2 class="card-title fw-bold"><a href="blog-single.html" class="text-decoration-none">How to Boost Your Immune System Naturally</a></h2>
+                                <p class="card-text">Discover science-backed strategies to strengthen your immune system through nutrition, lifestyle changes, and natural supplements. Learn which vitamins and minerals are most important for immune function and how to incorporate them into your daily routine.</p>
+                                <a href="blog-single.html" class="btn btn-primary">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="image/HBLOG1.jpg" class="card-img-top" alt="Managing Seasonal Allergies">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="badge bg-success">Wellness</span>
+                                        <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> May 28, 2023</span>
+                                    </div>
+                                    <h3 class="h5 card-title fw-bold"><a href="blog-single.html" class="text-decoration-none">Managing Seasonal Allergies Effectively</a></h3>
+                                    <p class="card-text">Comprehensive guide to understanding seasonal allergies, symptoms to watch for, and both medical and natural approaches to find relief during allergy season.</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="blog-single.html" class="btn btn-sm btn-outline-primary">Read More</a>
+                                    <span class="float-end text-muted small"><i class="far fa-comment me-1"></i> 5 Comments</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="image/HBLOG2.avif" class="card-img-top" alt="Importance of Regular Health Checkups">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="badge bg-info">Prevention</span>
+                                        <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> April 10, 2023</span>
+                                    </div>
+                                    <h3 class="h5 card-title fw-bold"><a href="blog-single.html" class="text-decoration-none">The Importance of Regular Health Checkups</a></h3>
+                                    <p class="card-text">Why preventive healthcare is crucial for early detection and maintaining overall wellness. Learn which screenings you need at every age and how often to get them.</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="blog-single.html" class="btn btn-sm btn-outline-primary">Read More</a>
+                                    <span class="float-end text-muted small"><i class="far fa-comment me-1"></i> 8 Comments</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="image/HBLOG3.jpg" class="card-img-top" alt="Understanding Blood Pressure">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="badge bg-warning text-dark">Heart Health</span>
+                                        <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> March 22, 2023</span>
+                                    </div>
+                                    <h3 class="h5 card-title fw-bold"><a href="blog-single.html" class="text-decoration-none">Understanding Blood Pressure: What Your Numbers Mean</a></h3>
+                                    <p class="card-text">A complete breakdown of blood pressure readings, risk factors for hypertension, and lifestyle changes that can help maintain healthy blood pressure levels.</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="blog-single.html" class="btn btn-sm btn-outline-primary">Read More</a>
+                                    <span class="float-end text-muted small"><i class="far fa-comment me-1"></i> 12 Comments</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="image/HBLOG4.jpg" class="card-img-top" alt="Sleep and Health Connection">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="badge bg-secondary">Sleep</span>
+                                        <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> February 15, 2023</span>
+                                    </div>
+                                    <h3 class="h5 card-title fw-bold"><a href="blog-single.html" class="text-decoration-none">The Sleep-Health Connection: Why Rest Matters</a></h3>
+                                    <p class="card-text">Exploring the profound impact of sleep on overall health, including its effects on immunity, mental health, weight management, and chronic disease prevention.</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="blog-single.html" class="btn btn-sm btn-outline-primary">Read More</a>
+                                    <span class="float-end text-muted small"><i class="far fa-comment me-1"></i> 7 Comments</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <nav aria-label="Blog pagination" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <div class="sidebar-widget mb-4">
+                            <h4 class="fw-bold mb-3">Search Blog</h4>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search articles...">
+                                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-widget mb-4">
+                            <h4 class="fw-bold mb-3">Categories</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <a href="#" class="text-decoration-none">Wellness</a>
+                                    <span class="badge bg-primary rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <a href="#" class="text-decoration-none">Prevention</a>
+                                    <span class="badge bg-primary rounded-pill">8</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <a href="#" class="text-decoration-none">Nutrition</a>
+                                    <span class="badge bg-primary rounded-pill">12</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <a href="#" class="text-decoration-none">Heart Health</a>
+                                    <span class="badge bg-primary rounded-pill">5</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <a href="#" class="text-decoration-none">Mental Health</a>
+                                    <span class="badge bg-primary rounded-pill">7</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sidebar-widget mb-4">
+                            <h4 class="fw-bold mb-3">Recent Posts</h4>
+                            <div class="list-group list-group-flush">
+                                <a href="blog-single.html" class="list-group-item list-group-item-action border-0 px-0">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Natural Cold Remedies That Work</h5>
+                                    </div>
+                                    <small class="text-muted"><i class="far fa-calendar-alt me-1"></i> June 5, 2023</small>
+                                </a>
+                                <a href="blog-single.html" class="list-group-item list-group-item-action border-0 px-0">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">The Truth About Vitamin D</h5>
+                                    </div>
+                                    <small class="text-muted"><i class="far fa-calendar-alt me-1"></i> May 18, 2023</small>
+                                </a>
+                                <a href="blog-single.html" class="list-group-item list-group-item-action border-0 px-0">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Managing Stress in Difficult Times</h5>
+                                    </div>
+                                    <small class="text-muted"><i class="far fa-calendar-alt me-1"></i> April 30, 2023</small>
+                                </a>
+                                <a href="blog-single.html" class="list-group-item list-group-item-action border-0 px-0">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Probiotics and Gut Health</h5>
+                                    </div>
+                                    <small class="text-muted"><i class="far fa-calendar-alt me-1"></i> April 15, 2023</small>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h4 class="fw-bold mb-3">Tags</h4>
+                            <div class="tags">
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Immunity</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Vitamins</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Exercise</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Diet</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Aging</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Children</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Seniors</a>
+                                <a href="#" class="badge bg-light text-dark me-1 mb-1">Prevention</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Subscribe to Our Health Newsletter</h2>
+                    <p class="mb-4">Get the latest health tips, expert advice, and exclusive offers delivered straight to your inbox.</p>
+                    <form class="newsletter-form mx-auto" style="max-width: 500px;">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required>
+                            <button class="btn btn-primary" type="submit">Subscribe <i class="fas fa-paper-plane ms-2"></i></button>
+                        </div>
+                        <div class="form-text mt-2">We respect your privacy. Unsubscribe at any time.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <img src="image/logo.png" alt="MediCare Pharmacy" class="footer-logo mb-3 img-fluid" width="180">
+                        <p class="text-white-50">Your trusted partner in health since 2005. We're committed to providing quality healthcare products and services to our community.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-2" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Home</a></li>
+                            <li class="mb-2"><a href="products.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Products</a></li>
+                            <li class="mb-2"><a href="services.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Services</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> About Us</a></li>
+                            <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Customer Service</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> FAQs</a></li>
+                            <li class="mb-2"><a href="shipping.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Shipping Policy</a></li>
+                            <li class="mb-2"><a href="returns.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Returns & Refunds</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Contact Us</h4>
+                        <ul class="list-unstyled contact-info">
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-map-marker-alt me-3 mt-1 text-primary"></i> <span>123 Medical Street, Health City, HC 12345</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-phone-alt me-3 mt-1 text-primary"></i> <span>(123) 456-7890</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-envelope me-3 mt-1 text-primary"></i> <span>info@medicarepharmacy.com</span></li>
+                            <li class="d-flex text-white"><i class="fas fa-clock me-3 mt-1 text-primary"></i> <span>Mon-Sat: 8:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright text-center mt-5 pt-3 border-top border-secondary">
+                <p class="mb-0 text-white-50">&copy; 2023 MediCare Pharmacy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Pharmacy - Your Trusted Healthcare Partner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <!-- Change all image paths to use 'images/' directory -->
+                <a href="index.html"><img src="image/logo.png" class="tanishka-logo" alt="MediCare Pharmacy Logo" /></a>
+                <a class="navbar-brand" href="index.html">MediCare Pharmacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="products.html?category=all">All Products</a>
+                                <a class="dropdown-item" href="products.html?category=prescription">Prescription Medicines</a>
+                                <a class="dropdown-item" href="products.html?category=otc">Over-the-Counter</a>
+                                <a class="dropdown-item" href="products.html?category=vitamins">Vitamins & Supplements</a>
+                                <a class="dropdown-item" href="products.html?category=personal">Personal Care</a>
+                                <a class="dropdown-item" href="products.html?category=baby">Baby Care</a>
+                                <a class="dropdown-item" href="products.html?category=elderly">Elderly Care</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+            
+                    <div class="search-box me-3">
+                        <form role="search">
+                          <input type="search" placeholder="Search medicines..." aria-label="Search medicines">
+                          <button type="submit" title="Search">
+                            <i class="fas fa-search"></i>
+                            <span class="visually-hidden">Search</span>
+                          </button>
+                        </form>
+                      </div>
+                    
+                    <div class="dropdown ms-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle fs-4 text-primary"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                            <li><h6 class="dropdown-header">My Account</h6></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i> Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus me-2"></i> Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-account.html"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="bi bi-box-seam me-2"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="prescriptions.html"><i class="bi bi-file-earmark-medical me-2"></i> My Prescriptions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-icon position-relative ms-3" title="View Cart">
+                        <i class="bi bi-cart3 fs-4"></i>
+                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        <span class="visually-hidden">View Cart</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    
+        <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/BANNER_1.avif" class="d-block w-100" alt="Pharmacy Services">
+                    <div class="carousel-caption text-start">
+                        <h1 class="animate__animated animate__fadeInDown">Your Trusted Healthcare Partner</h1>
+                        <p class="animate__animated animate__fadeInUp">Quality medications delivered to your doorstep with care</p>
+                        <div class="d-flex flex-wrap">
+                            <a href="products.html" class="btn btn-primary btn-lg animate__animated animate__fadeInUp me-2 mb-2">Shop Now</a>
+                            <a href="services.html" class="btn btn-outline-light btn-lg animate__animated animate__fadeInUp mb-2">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/BANNER2.jpg" class="d-block w-100" alt="Pharmacy Discount">
+                    <div class="carousel-caption text-start">
+                        <h1 class="animate__animated animate__fadeInDown">20% Off On All Products</h1>
+                        <p class="animate__animated animate__fadeInUp">Limited time offer - Use code HEALTH20 at checkout</p>
+                        <a href="products.html" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/BANNER3.jpg" class="d-block w-100" alt="Online Consultation">
+                    <div class="carousel-caption text-start">
+                        <h1 class="animate__animated animate__fadeInDown">Online Doctor Consultation</h1>
+                        <p class="animate__animated animate__fadeInUp">Get professional medical advice from the comfort of your home</p>
+                        <a href="services.html#consultation" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    
+    <section class="quick-links py-3 bg-primary text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <a href="services.html#prescription" class="text-white text-decoration-none d-flex align-items-center">
+                        <div class="quick-link-icon bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                            <i class="fas fa-prescription"></i>
+                        </div>
+                        <span>Prescription Services</span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="services.html#delivery" class="text-white text-decoration-none d-flex align-items-center">
+                        <div class="quick-link-icon bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <span>Free Delivery</span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="services.html#consultation" class="text-white text-decoration-none d-flex align-items-center">
+                        <div class="quick-link-icon bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <span>Online Consultation</span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="services.html#vaccination" class="text-white text-decoration-none d-flex align-items-center">
+                        <div class="quick-link-icon bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <span>Vaccination</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="featured-products py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="fw-bold">Featured Healthcare Products</h2>
+            <p class="lead text-muted">Quality medications and healthcare essentials</p>
+            <div class="divider mx-auto my-4" style="width: 80px; height: 3px; background: #3498db;"></div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"> 
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/vitaminC.webp" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Vitamin C 1000mg" style="object-fit: contain;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white px-2 py-1 m-2 small rounded-pill">BESTSELLER</span>
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Vitamins</span>
+                        <h5 class="card-title mb-2">Vitamin C 1000mg</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold">₹95</span>
+                            <small class="text-muted text-decoration-line-through ms-2">₹180</small>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <small class="text-muted ms-2">(24)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-capsules me-1"></i> 20 Tablets</span>
+                            <span class="ms-3"><i class="fas fa-check-circle text-success me-1"></i> In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/pain.webp" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Pain Relief Tablets" style="object-fit: contain;">
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Pain Relief</span>
+                        <h5 class="card-title mb-2">Pain Relief Tablets</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold">₹45.99</span>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <small class="text-muted ms-2">(36)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-capsules me-1"></i> 24 Tablets</span>
+                            <span class="ms-3"><i class="fas fa-check-circle text-success me-1"></i> In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/multivit.webp" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Daily Multivitamin" style="object-fit: contain;">
+                        <span class="position-absolute top-0 end-0 bg-success text-white px-2 py-1 m-2 small rounded-pill">NEW</span>
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Multivitamin</span>
+                        <h5 class="card-title mb-2">Daily Multivitamin</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold">₹399</span>
+                            <small class="text-muted text-decoration-line-through ms-2">₹529</small>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <small class="text-muted ms-2">(18)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-capsules me-1"></i> 70 Tablets</span>
+                            <span class="ms-3"><i class="fas fa-check-circle text-success me-1"></i> In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/first-aid.jpg" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="First Aid Kit" style="object-fit: contain;">
+                        <span class="position-absolute top-0 end-0 bg-info text-white px-2 py-1 m-2 small rounded-pill">ESSENTIAL</span>
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">First Aid</span>
+                        <h5 class="card-title mb-2">Family First Aid Kit</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold">₹2,499</span>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <small class="text-muted ms-2">(93)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-check-circle text-success me-1"></i> In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/bp.jpg" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Blood Pressure Monitor" style="object-fit: contain;">
+                        <span class="position-absolute top-0 end-0 bg-warning text-dark px-2 py-1 m-2 small rounded-pill">TOP RATED</span>
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Medical Device</span>
+                        <h5 class="card-title mb-2">Digital BP Monitor</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold">₹1,850</span>
+                            <small class="text-muted text-decoration-line-through ms-2">₹2345</small>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <small class="text-muted ms-2">(128)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-battery-full me-1"></i> Battery Included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/allergy.jpeg" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Allergy Relief" style="object-fit: contain;">
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Allergy Relief</span>
+                        <h5 class="card-title mb-2">24-Hour Allergy Relief</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold">₹246.5</span>
+                            <small class="text-muted text-decoration-line-through ms-2">₹302.61</small>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <small class="text-muted ms-2">(57)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-capsules me-1"></i> 45 Tablets</span>
+                            <span class="ms-3"><i class="fas fa-check-circle text-success me-1"></i> In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/sugar_test.jpg" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Diabetic Testing Kit" style="object-fit: contain;">
+                        <span class="position-absolute top-0 end-0 bg-success text-white px-2 py-1 m-2 small rounded-pill">NEW</span>
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Diabetes Care</span>
+                        <h5 class="card-title mb-2">Diabetic Testing Kit</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold"> ₹1,563</span>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <small class="text-muted ms-2">(42)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-tint me-1"></i> 50 Test Strips</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-relative" style="height: 280px; background-color: #f8f9fa;">
+                        <img src="image/Digestive.jpg" class="card-img-top h-100 w-auto mx-auto p-3" 
+                             alt="Digestive Aid" style="object-fit: contain;">
+                        <span class="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 m-2 small rounded-pill">FAST RELIEF</span>
+                        <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-center opacity-0" 
+                             style="transition: all 0.3s ease;">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-2">
+                                <i class="fas fa-cart-plus me-1"></i> Add
+                            </a>
+                            <a href="product-detail.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                <i class="fas fa-eye me-1"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pt-0">
+                        <span class="badge bg-light text-muted mb-2">Digestive Health</span>
+                        <h5 class="card-title mb-2">Advanced Digestive Aid</h5>
+                        <div class="price mb-2">
+                            <span class="text-primary fw-bold"> ₹863</span>
+                        </div>
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <small class="text-muted ms-2">(29)</small>
+                        </div>
+                        <div class="product-meta small text-muted">
+                            <span><i class="fas fa-capsules me-1"></i> 60 Capsules</span>
+                            <span class="ms-3"><i class="fas fa-check-circle text-success me-1"></i> In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="products.html" class="btn btn-primary btn-lg rounded-pill px-4 py-2 shadow">
+                <i class="fas fa-prescription-bottle-alt me-2"></i> View All Products
+            </a>
+        </div>
+    </div>
+</section>
+    <section class="health-services py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Our Healthcare Services</h2>
+                <p class="lead">Comprehensive care for you and your family</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-prescription-bottle fa-2x"></i>
+                        </div>
+                        <h3>Prescription Management</h3>
+                        <p>Our pharmacists review your medications for potential interactions and provide personalized counseling.</p>
+                        <a href="services.html#prescription" class="text-primary fw-bold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-user-md fa-2x"></i>
+                        </div>
+                        <h3>Online Consultation</h3>
+                        <p>Connect with licensed healthcare providers for virtual consultations and prescription services.</p>
+                        <a href="services.html#consultation" class="text-primary fw-bold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-syringe fa-2x"></i>
+                        </div>
+                        <h3>Vaccination Clinic</h3>
+                        <p>Get your flu shots, COVID-19 vaccines, and other immunizations from our certified staff.</p>
+                        <a href="services.html#vaccination" class="text-primary fw-bold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section py-5 text-white" style="background: linear-gradient(to right, #2c3e50, #060824);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="image/prescription.avif" alt="Upload Prescription" class="img-fluid rounded-3">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-4">Easy Prescription Refills</h2>
+                    <p class="lead mb-4">Upload your prescription and we'll take care of the rest. Our pharmacists will review and prepare your medications.</p>
+                    <div class="d-flex flex-column flex-sm-row">
+                        <a href="contact.html" class="btn btn-primary btn-lg mb-3 mb-sm-0 me-sm-3">Upload Prescription</a>
+                        <a href="tel:+1234567890" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-phone me-2"></i> Call Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="health-tips py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Health Tips & Advice</h2>
+                <p class="lead">Expert recommendations for better health</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="tip-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="tip-badge bg-success text-white">NEW</div>
+                        <img src="image/blog1.avif" alt="Diabetes Management" class="img-fluid rounded-3 mb-3">
+                        <h3>Managing Diabetes</h3>
+                        <p>Learn how to monitor your blood sugar levels and maintain a healthy lifestyle with diabetes.</p>
+                        <a href="blog-single.html" class="text-primary fw-bold text-decoration-none">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tip-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <img src="image/blog2.avif" alt="Heart Health" class="img-fluid rounded-3 mb-3">
+                        <h3>Heart Healthy Living</h3>
+                        <p>Discover simple lifestyle changes that can significantly improve your cardiovascular health.</p>
+                        <a href="blog-single.html" class="text-primary fw-bold text-decoration-none">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tip-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="tip-badge bg-info text-white">POPULAR</div>
+                        <img src="image/blog3.jpg" alt="Immunity Boost" class="img-fluid rounded-3 mb-3">
+                        <h3>Boosting Your Immunity</h3>
+                        <p>Natural ways to strengthen your immune system and stay healthy throughout the year.</p>
+                        <a href="blog-single.html" class="text-primary fw-bold text-decoration-none">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>What Our Customers Say</h2>
+                <p class="lead">Trusted by thousands of satisfied customers</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"The online prescription service saved me so much time. My medications were delivered the next day with clear instructions."</p>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <img src="image/review1.avif" alt="Sarah Johnson" class="img-fluid rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-1">Sarah Johnson</h5>
+                                <span class="text-muted small">Regular Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"The pharmacist took time to explain my new medication and potential side effects. Very professional and caring service."</p>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <img src="image/review2.avif" alt="Michael Brown" class="img-fluid rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-1">Michael Brown</h5>
+                                <span class="text-muted small">Customer Since 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-4">"I appreciate the reminder service for prescription refills. Never missed a dose since I started using MediCare Pharmacy."</p>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <img src="image/review3.jpg" alt="Emily Davis" class="img-fluid rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-1">Emily Davis</h5>
+                                <span class="text-muted small">Senior Citizen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter py-5 text-white" style="background: linear-gradient(to right, #3498db, #2c3e50);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-3">Stay Informed About Your Health</h2>
+                    <p class="mb-4">Subscribe to our newsletter for health tips, product updates, and exclusive offers.</p>
+                    <form class="newsletter-form mx-auto">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required>
+                            <button class="btn btn-light" type="submit">Subscribe <i class="fas fa-paper-plane ms-2"></i></button>
+                        </div>
+                        <div class="form-text mt-2 text-white-50">We respect your privacy. Unsubscribe at any time.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <img src="image/logo.png" alt="MediCare Pharmacy" class="footer-logo mb-3 img-fluid" width="180">
+                        <p class="text-white-50">Your trusted partner in health since 2005. We're committed to providing quality healthcare products and services to our community.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-2" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Home</a></li>
+                            <li class="mb-2"><a href="products.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Products</a></li>
+                            <li class="mb-2"><a href="services.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Services</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> About Us</a></li>
+                            <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Health Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Customer Service</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> FAQs</a></li>
+                            <li class="mb-2"><a href="shipping.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Shipping Policy</a></li>
+                            <li class="mb-2"><a href="returns.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Returns & Refunds</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Contact Us</h4>
+                        <ul class="list-unstyled contact-info">
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-map-marker-alt me-3 mt-1 text-primary"></i> <span>123 Medical Street, Health City,Lucknow U.P</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-phone-alt me-3 mt-1 text-primary"></i> <span>8795695820</span></li>
+                           <!-- Change fas fa-envelope to fas fa-envelope -->
+<li class="d-flex text-white"><i class="fas fa-envelope me-3 mt-1 text-primary"></i> <span>hp795832@gmail.com</span></li>
+                            <li class="d-flex text-white"><i class="fas fa-clock me-3 mt-1 text-primary"></i> <span>Mon-Sat: 8:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright text-center mt-5 pt-3 border-top border-secondary">
+                <p class="mb-0 text-white-50">&copy; 2026 MediCare Pharmacy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

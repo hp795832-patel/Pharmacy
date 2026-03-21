@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MediCare Pharmacy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a href="index.html"><img src="image/logo.png" class="tanishka-logo" alt="logo" /></a>
+                <a class="navbar-brand" href="index.html">MediCare Pharmacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="products.html?category=all">All Products</a>
+                                <a class="dropdown-item" href="products.html?category=prescription">Prescription Medicines</a>
+                                <a class="dropdown-item" href="products.html?category=otc">Over-the-Counter</a>
+                                <a class="dropdown-item" href="products.html?category=vitamins">Vitamins & Supplements</a>
+                                <a class="dropdown-item" href="products.html?category=personal">Personal Care</a>
+                                <a class="dropdown-item" href="products.html?category=baby">Baby Care</a>
+                                <a class="dropdown-item" href="products.html?category=elderly">Elderly Care</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+            
+                    <div class="search-box me-3">
+                        <input type="text" placeholder="Search medicines...">
+                        <button type="button" title="Search">
+                            <i class="fas fa-search"></i>
+                            <span class="visually-hidden">Search</span>
+                        </button>
+                    </div>
+                    
+                    <div class="dropdown ms-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle fs-4 text-primary"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                            <li><h6 class="dropdown-header">My Account</h6></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i> Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus me-2"></i> Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-account.html"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="bi bi-box-seam me-2"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="prescriptions.html"><i class="bi bi-file-earmark-medical me-2"></i> My Prescriptions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-icon position-relative ms-3" title="View Cart">
+                        <i class="bi bi-cart3 fs-4"></i>
+                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        <span class="visually-hidden">View Cart</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="mb-3 fw-bold">Checkout</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                            <li class="breadcrumb-item"><a href="cart.html" class="text-decoration-none">Cart</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="checkout-steps">
+                        <div class="checkout-progress mb-5">
+                            <ul class="nav nav-pills justify-content-between">
+                                <li class="nav-item flex-grow-1 text-center">
+                                    <a class="nav-link active d-flex flex-column align-items-center" href="#">
+                                        <span class="step-number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mb-2">1</span>
+                                        <span class="step-text">Billing</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item flex-grow-1 text-center">
+                                    <a class="nav-link disabled d-flex flex-column align-items-center" href="#">
+                                        <span class="step-number rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mb-2">2</span>
+                                        <span class="step-text">Shipping</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item flex-grow-1 text-center">
+                                    <a class="nav-link disabled d-flex flex-column align-items-center" href="#">
+                                        <span class="step-number rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mb-2">3</span>
+                                        <span class="step-text">Payment</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item flex-grow-1 text-center">
+                                    <a class="nav-link disabled d-flex flex-column align-items-center" href="#">
+                                        <span class="step-number rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mb-2">4</span>
+                                        <span class="step-text">Review</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="checkout-form mb-5 bg-white p-4 rounded shadow-sm">
+                            <h4 class="mb-4 fw-bold">Billing Address</h4>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="address1" class="form-label">Street Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control mb-2" id="address1" placeholder="House number and street name" required>
+                                        <input type="text" class="form-control" id="address2" placeholder="Apartment, suite, unit etc. (optional)">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="city" class="form-label">Town / City <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                                        <select id="state" class="form-select" required>
+                                            <option value="">Select State</option>
+                                            <option>California</option>
+                                            <option>New York</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="zip" class="form-label">ZIP / Postal Code <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="zip" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
+                                        <select id="country" class="form-select" required>
+                                            <option value="">Select Country</option>
+                                            <option selected>United States</option>
+                                            <option>Canada</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="createAccount">
+                                            <label class="form-check-label" for="createAccount">Create an account?</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="shipToDifferent">
+                                            <label class="form-check-label" for="shipToDifferent">Ship to a different address?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="shipping-method mb-5 bg-white p-4 rounded shadow-sm">
+                            <h4 class="mb-4 fw-bold">Shipping Method</h4>
+                            <div class="shipping-options">
+                                <div class="form-check mb-3 p-3 border rounded">
+                                    <input class="form-check-input" type="radio" name="shippingMethod" id="standardShipping" checked>
+                                    <label class="form-check-label d-flex justify-content-between w-100" for="standardShipping">
+                                        <div>
+                                            <span class="d-block fw-bold">Standard Shipping</span>
+                                            <span class="text-muted small">3-5 business days</span>
+                                        </div>
+                                        <span class="fw-bold">₹15.00</span>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3 p-3 border rounded">
+                                    <input class="form-check-input" type="radio" name="shippingMethod" id="expressShipping">
+                                    <label class="form-check-label d-flex justify-content-between w-100" for="expressShipping">
+                                        <div>
+                                            <span class="d-block fw-bold">Express Shipping</span>
+                                            <span class="text-muted small">1-2 business days</span>
+                                        </div>
+                                        <span class="fw-bold">₹50.00</span>
+                                    </label>
+                                </div>
+                                <div class="form-check p-3 border rounded">
+                                    <input class="form-check-input" type="radio" name="shippingMethod" id="localPickup">
+                                    <label class="form-check-label d-flex justify-content-between w-100" for="localPickup">
+                                        <div>
+                                            <span class="d-block fw-bold">Local Pickup</span>
+                                            <span class="text-muted small">Pick up from our store</span>
+                                        </div>
+                                        <span class="fw-bold">Free</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method bg-white p-4 rounded shadow-sm">
+                            <h4 class="mb-4 fw-bold">Payment Method</h4>
+                            <div class="payment-options">
+                                <div class="payment-option mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                                        <label class="form-check-label fw-bold" for="creditCard">
+                                            <i class="far fa-credit-card me-2"></i> Credit Card
+                                        </label>
+                                    </div>
+                                    <div class="payment-details mt-3" id="creditCardDetails">
+                                        <div class="mb-3">
+                                            <label for="cardNumber" class="form-label">Card Number <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="cardName" class="form-label">Name on Card <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="cardName" required>
+                                        </div>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="cardExpiry" class="form-label">Expiration Date <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="cardCvv" class="form-label">CVV <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="cardCvv" placeholder="123" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-option mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypal">
+                                        <label class="form-check-label fw-bold" for="paypal">
+                                            <i class="fab fa-paypal me-2"></i> PayPal
+                                        </label>
+                                    </div>
+                                    <div class="payment-details mt-3" id="paypalDetails" style="display: none;">
+                                        <p>You will be redirected to PayPal website to complete your payment securely.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="pharmacyCredit">
+                                        <label class="form-check-label fw-bold" for="pharmacyCredit">
+                                            <i class="fas fa-wallet me-2"></i> Pharmacy Credit
+                                        </label>
+                                    </div>
+                                    <div class="payment-details mt-3" id="pharmacyCreditDetails" style="display: none;">
+                                        <p>You have $25.00 in pharmacy credit available.</p>
+                                        <div class="mb-3">
+                                            <label for="creditAmount" class="form-label">Amount to Use</label>
+                                            <input type="text" class="form-control" id="creditAmount" placeholder="$25.00">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-notes mt-5 bg-white p-4 rounded shadow-sm">
+                            <h4 class="mb-4 fw-bold">Order Notes</h4>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="orderNotes" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="order-summary bg-white rounded shadow-sm">
+                        <div class="order-summary-header p-4 border-bottom">
+                            <h4 class="mb-0 fw-bold">Your Order</h4>
+                        </div>
+                        
+                        <div class="order-products p-4">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Vitamin C 1000mg × 2</td>
+                                        <td class="text-end">₹190</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pain Relief Tablets × 1</td>
+                                        <td class="text-end">₹91.98</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-bottom-0">Subtotal</td>
+                                        <td class="text-end border-bottom-0">₹281.98</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-bottom-0">Shipping</td>
+                                        <td class="text-end border-bottom-0">₹15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-bottom-0">Tax</td>
+                                        <td class="text-end border-bottom-0">₹</td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <td class="fw-bold">Total</td>
+                                        <td class="text-end fw-bold">₹296.98</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="coupon-code p-4 border-top">
+                            <h5 class="mb-3 fw-bold">Have a Coupon?</h5>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Coupon Code">
+                                <button class="btn btn-outline-primary" type="button">Apply</button>
+                            </div>
+                        </div>
+                        
+                        <div class="terms-and-conditions p-4 border-top">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                <label class="form-check-label" for="agreeTerms">
+                                    I have read and agree to the website <a href="#" class="text-decoration-none">terms and conditions</a> <span class="text-danger">*</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="privacyPolicy" required>
+                                <label class="form-check-label" for="privacyPolicy">
+                                    I agree to the <a href="#" class="text-decoration-none">privacy policy</a> <span class="text-danger">*</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 border-top">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Place Order</button>
+                            
+                            <div class="secure-checkout mt-3 text-center text-muted">
+                                <i class="fas fa-lock me-2"></i> Secure Checkout
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <img src="image/logo.png" alt="MediCare Pharmacy" class="footer-logo mb-3 img-fluid" width="180">
+                        <p class="text-white-50">Your trusted partner in health since 2005. We're committed to providing quality healthcare products and services to our community.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-2" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Home</a></li>
+                            <li class="mb-2"><a href="products.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Products</a></li>
+                            <li class="mb-2"><a href="services.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Services</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> About Us</a></li>
+                            <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Customer Service</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> FAQs</a></li>
+                            <li class="mb-2"><a href="shipping.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Shipping Policy</a></li>
+                            <li class="mb-2"><a href="returns.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Returns & Refunds</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Contact Us</h4>
+                        <ul class="list-unstyled contact-info">
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-map-marker-alt me-3 mt-1 text-primary"></i> <span>123 Medical Street, Health City, HC 12345</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-phone-alt me-3 mt-1 text-primary"></i> <span>(123) 456-7890</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-envelope me-3 mt-1 text-primary"></i> <span>info@medicarepharmacy.com</span></li>
+                            <li class="d-flex text-white"><i class="fas fa-clock me-3 mt-1 text-primary"></i> <span>Mon-Sat: 8:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright text-center mt-5 pt-3 border-top border-secondary">
+                <p class="mb-0 text-white-50">&copy; 2023 MediCare Pharmacy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Payment method toggle
+            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+            const paymentDetails = document.querySelectorAll('.payment-details');
+            
+            // Show credit card by default
+            document.getElementById('creditCardDetails').style.display = 'block';
+            
+            // Handle payment method change
+            paymentMethods.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Hide all payment details
+                    paymentDetails.forEach(detail => detail.style.display = 'none');
+                    
+                    // Show selected one
+                    const selectedDetails = document.getElementById(this.id + 'Details');
+                    if (selectedDetails) selectedDetails.style.display = 'block';
+                });
+            });
+            
+            // Form validation
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    const termsChecked = document.getElementById('agreeTerms').checked;
+                    const privacyChecked = document.getElementById('privacyPolicy').checked;
+                    
+                    if (!termsChecked || !privacyChecked) {
+                        e.preventDefault();
+                        alert('Please agree to both the terms and conditions and privacy policy');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

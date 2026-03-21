@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - MediCare Pharmacy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a href="index.html"><img src="image/logo.png" class="tanishka-logo" alt="logo" /></a>
+                <a class="navbar-brand" href="index.html">MediCare Pharmacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="products.html?category=all">All Products</a>
+                                <a class="dropdown-item" href="products.html?category=prescription">Prescription Medicines</a>
+                                <a class="dropdown-item" href="products.html?category=otc">Over-the-Counter</a>
+                                <a class="dropdown-item" href="products.html?category=vitamins">Vitamins & Supplements</a>
+                                <a class="dropdown-item" href="products.html?category=personal">Personal Care</a>
+                                <a class="dropdown-item" href="products.html?category=baby">Baby Care</a>
+                                <a class="dropdown-item" href="products.html?category=elderly">Elderly Care</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+            
+                    <div class="search-box me-3">
+                        <input type="text" placeholder="Search medicines...">
+                        <button type="button" title="Search">
+                            <i class="fas fa-search"></i>
+                            <span class="visually-hidden">Search</span>
+                        </button>
+                    </div>
+                    
+                    <div class="dropdown ms-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle fs-4 text-primary"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                            <li><h6 class="dropdown-header">My Account</h6></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i> Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus me-2"></i> Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-account.html"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="bi bi-box-seam me-2"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="prescriptions.html"><i class="bi bi-file-earmark-medical me-2"></i> My Prescriptions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-icon position-relative ms-3" title="View Cart">
+                        <i class="bi bi-cart3 fs-4"></i>
+                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        <span class="visually-hidden">View Cart</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="account-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-3">My Account</h1>
+                    <p class="lead mb-0">Welcome back, <span class="fw-bold">TANISHKA SAHU</span></p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="account-status alert alert-success d-inline-flex align-items-center">
+                        <i class="fas fa-check-circle me-2"></i> Account Verified
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="account-content py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="account-sidebar card mb-4 mb-lg-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="image/tanishka.avif" alt="User" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h6 class="mb-0">Tanishka Sahu</h6>
+                                    <small class="text-muted">Member since 2023</small>
+                                </div>
+                            </div>
+                            
+                            <ul class="nav flex-column account-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="my-account.html">
+                                        <i class="fas fa-user me-2"></i> My Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="orders.html">
+                                        <i class="fas fa-box me-2"></i> My Orders
+                                        <span class="badge bg-primary float-end">5</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="prescriptions.html">
+                                        <i class="fas fa-prescription me-2"></i> My Prescriptions
+                                        <span class="badge bg-primary float-end">2</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="addresses.html">
+                                        <i class="fas fa-map-marker-alt me-2"></i> My Addresses
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="wallet.html">
+                                        <i class="fas fa-wallet me-2"></i> Pharmacy Credit
+                                        <span class="badge bg-success float-end">₹500</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="settings.html">
+                                        <i class="fas fa-cog me-2"></i> Account Settings
+                                    </a>
+                                </li>
+                                <li class="nav-item mt-3">
+                                    <a class="nav-link text-danger" href="#" id="sidebarLogoutBtn">
+                                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="account-quick-links card mt-4">
+                        <div class="card-body">
+                            <h6 class="mb-3"><i class="fas fa-clock me-2"></i> Recent Activity</h6>
+                            <ul class="list-unstyled small">
+                                <li class="mb-2"><i class="fas fa-shopping-cart text-primary me-2"></i> Placed order #MC-10025</li>
+                                <li class="mb-2"><i class="fas fa-prescription-bottle-alt text-primary me-2"></i> Uploaded new prescription</li>
+                                <li class="mb-2"><i class="fas fa-comment text-primary me-2"></i> Left product review</li>
+                                <li><i class="fas fa-heart text-primary me-2"></i> Added item to wishlist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <div class="account-main card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="mb-0">My Profile</h4>
+                                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                    <i class="fas fa-edit me-1"></i> Edit Profile
+                                </button>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <h6 class="text-muted mb-3 border-bottom pb-2">Personal Information</h6>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Full Name:</strong></p>
+                                            <p>Tanishka Sahu</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Email:</strong></p>
+                                            <p>tan.doe@example.com <span class="badge bg-success">Verified</span></p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Phone:</strong></p>
+                                            <p>+91 9876543210 <span class="badge bg-success">Verified</span></p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Date of Birth:</strong></p>
+                                            <p>January 15, 1995
+                                            </p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Gender:</strong></p>
+                                            <p>Female</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <h6 class="text-muted mb-3 border-bottom pb-2">Health Information</h6>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Blood Group:</strong></p>
+                                            <p>O+</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Known Allergies:</strong></p>
+                                            <p>Penicillin, Pollen</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Chronic Conditions:</strong></p>
+                                            <p>Hypertension</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Preferred Pharmacy:</strong></p>
+                                            <p>MediCare Main Branch</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h6 class="text-muted mb-3 border-bottom pb-2">Account Security</h6>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Last Login:</strong></p>
+                                            <p>Today, 10:30 AM from Chrome on Windows</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Password:</strong></p>
+                                            <p>******** <a href="#" class="ms-2" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Change Password</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-top pt-4 mt-4">
+                                <h6 class="text-muted mb-3 border-bottom pb-2">Emergency Contact</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Name:</strong></p>
+                                            <p>Petter</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Relationship:</strong></p>
+                                            <p>Spouse</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Phone:</strong></p>
+                                            <p>+91 9876543211</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit me-1"></i> Edit Emergency Contact
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-top pt-4 mt-4">
+                                <h6 class="text-muted mb-3 border-bottom pb-2">Account Preferences</h6>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                    <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="smsNotifications" checked>
+                                    <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="promotionalEmails">
+                                    <label class="form-check-label" for="promotionalEmails">Promotional Emails</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-health-summary card mt-4">
+                        <div class="card-body">
+                            <h5 class="mb-4"><i class="fas fa-heartbeat me-2 text-danger"></i> Health Summary</h5>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="health-stat p-3 rounded bg-light">
+                                        <h6 class="text-muted">Active Prescriptions</h6>
+                                        <h3 class="mb-0 text-primary">2</h3>
+                                        <a href="prescriptions.html" class="small">View All</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="health-stat p-3 rounded bg-light">
+                                        <h6 class="text-muted">Upcoming Refills</h6>
+                                        <h3 class="mb-0 text-primary">1</h3>
+                                        <a href="orders.html" class="small">Manage Refills</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="health-stat p-3 rounded bg-light">
+                                        <h6 class="text-muted">Doctor Visits</h6>
+                                        <h3 class="mb-0 text-primary">3</h3>
+                                        <a href="#" class="small">View History</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="editFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="editFirstName" value="Tanishka">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="editLastName" value="Doe">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="editEmail" value="tan.doe@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="editPhone" value="9876543210">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editDob" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="editDob" value="1995-01-15">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editGender" class="form-label">Gender</label>
+                                <select class="form-select" id="editGender">
+                                    <option value="male" selected>Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <h6 class="mt-4 mb-3">Health Information</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editBloodGroup" class="form-label">Blood Group</label>
+                                <select class="form-select" id="editBloodGroup">
+                                    <option value="">Select Blood Group</option>
+                                    <option value="A+" selected>A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editAllergies" class="form-label">Known Allergies</label>
+                                <input type="text" class="form-control" id="editAllergies" value="Penicillin, Pollen">
+                            </div>
+                            <div class="col-12">
+                                <label for="editConditions" class="form-label">Chronic Conditions</label>
+                                <input type="text" class="form-control" id="editConditions" value="Hypertension">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                            <div class="form-text">Minimum 8 characters with at least one number and one special character</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> For security reasons, we recommend you don't reuse old passwords.
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Update Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <img src="image/logo.png" alt="MediCare Pharmacy" class="footer-logo mb-3 img-fluid" width="180">
+                        <p class="text-white-50">Your trusted partner in health since 2005. We're committed to providing quality healthcare products and services to our community.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-2" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Home</a></li>
+                            <li class="mb-2"><a href="products.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Products</a></li>
+                            <li class="mb-2"><a href="services.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Services</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> About Us</a></li>
+                            <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Customer Service</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> FAQs</a></li>
+                            <li class="mb-2"><a href="shipping.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Shipping Policy</a></li>
+                            <li class="mb-2"><a href="returns.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Returns & Refunds</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Contact Us</h4>
+                        <ul class="list-unstyled contact-info">
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-map-marker-alt me-3 mt-1 text-primary"></i> <span>123 Medical Street, Health City, HC 12345</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-phone-alt me-3 mt-1 text-primary"></i> <span>(123) 456-7890</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-envelope me-3 mt-1 text-primary"></i> <span>info@medicarepharmacy.com</span></li>
+                            <li class="d-flex text-white"><i class="fas fa-clock me-3 mt-1 text-primary"></i> <span>Mon-Sat: 8:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright text-center mt-5 pt-3 border-top border-secondary">
+                <p class="mb-0 text-white-50">&copy; 2023 MediCare Pharmacy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logout functionality
+            const logoutButtons = document.querySelectorAll('#logoutBtn, #sidebarLogoutBtn');
+            
+            logoutButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Add your logout logic here
+                    alert('You have been logged out');
+                    window.location.href = 'index.html';
+                });
+            });
+            
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Password visibility toggle
+            const passwordInputs = document.querySelectorAll('input[type="password"]');
+            passwordInputs.forEach(input => {
+                const parent = input.parentElement;
+                const toggle = document.createElement('span');
+                toggle.className = 'password-toggle';
+                toggle.innerHTML = '<i class="fas fa-eye"></i>';
+                toggle.style.cursor = 'pointer';
+                toggle.style.position = 'absolute';
+                toggle.style.right = '10px';
+                toggle.style.top = '50%';
+                toggle.style.transform = 'translateY(-50%)';
+                
+                parent.style.position = 'relative';
+                parent.appendChild(toggle);
+                
+                toggle.addEventListener('click', function() {
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        toggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                    } else {
+                        input.type = 'password';
+                        toggle.innerHTML = '<i class="fas fa-eye"></i>';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

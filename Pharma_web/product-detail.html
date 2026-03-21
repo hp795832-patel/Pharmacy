@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MediCare Pharmacy - Your Trusted Healthcare Partner</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 80px;
+            color: #333;
+        }
+        
+        .product-gallery img {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .product-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .main-image {
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+        
+        .thumbnail {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            border-color: var(--primary);
+        }
+        
+        .price {
+            font-size: 1.8rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .discount-badge {
+            top: 10px;
+            right: 10px;
+        }
+        
+        .quantity-input {
+            width: 70px;
+            text-align: center;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            font-weight: 600;
+        }
+    
+        .review-card {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .related-product {
+            transition: all 0.3s ease;
+        }
+        
+        .related-product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a href="index.html"><img src="image/logo.png" class="tanishka-logo" alt="logo" /></a>
+            <a class="navbar-brand" href="index.html">MediCare Pharmacy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="products.html?category=all">All Products</a>
+                            <a class="dropdown-item" href="products.html?category=prescription">Prescription Medicines</a>
+                            <a class="dropdown-item" href="products.html?category=otc">Over-the-Counter</a>
+                            <a class="dropdown-item" href="products.html?category=vitamins">Vitamins & Supplements</a>
+                            <a class="dropdown-item" href="products.html?category=personal">Personal Care</a>
+                            <a class="dropdown-item" href="products.html?category=baby">Baby Care</a>
+                            <a class="dropdown-item" href="products.html?category=elderly">Elderly Care</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+        
+                <div class="search-box me-3">
+                    <input type="text" placeholder="Search medicines...">
+                    <button type="button" title="Search">
+                        <i class="fas fa-search"></i>
+                        <span class="visually-hidden">Search</span>
+                    </button>
+                </div>
+                
+                <div class="dropdown ms-3">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle fs-4 text-primary"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                        <li><h6 class="dropdown-header">My Account</h6></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i> Login</a></li>
+                        <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus me-2"></i> Register</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="my-account.html"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                        <li><a class="dropdown-item" href="orders.html"><i class="bi bi-box-seam me-2"></i> My Orders</a></li>
+                        <li><a class="dropdown-item" href="prescriptions.html"><i class="bi bi-file-earmark-medical me-2"></i> My Prescriptions</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                    </ul>
+                </div>
+                
+                <a href="cart.html" class="cart-icon position-relative ms-3" title="View Cart">
+                    <i class="bi bi-cart3 fs-4"></i>
+                    <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    <span class="visually-hidden">View Cart</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="product-details py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" id="product-category-breadcrumb">Vitamins</li>
+                        </ol>
+                    </nav>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="product-gallery">
+                        <div class="main-image mb-3 text-center">
+                            <img id="mainProductImage" src="image/vitaminC.webp" class="img-fluid" style="max-height: 400px;" alt="Vitamin C 1000mg">
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-3">
+                                <img src="image/vitC_TN1.webp" class="img-fluid thumbnail active" onclick="changeImage('images/products/vitamin-c-large.jpg')" alt="Vitamin C Front">
+                            </div>
+                            <div class="col-3">
+                                <img src="image/vitC_TN2.webp" class="img-fluid thumbnail" onclick="changeImage('images/products/vitamin-c-large2.jpg')" alt="Vitamin C Back">
+                            </div>
+                            <div class="col-3">
+                                <img src="image/vitC_TN3.webp" class="img-fluid thumbnail" onclick="changeImage('images/products/vitamin-c-large3.jpg')" alt="Vitamin C Side">
+                            </div>
+                            <div class="col-3">
+                                <img src="image/vitC_TN4.webp" class="img-fluid thumbnail" onclick="changeImage('images/products/vitamin-c-large4.jpg')" alt="Vitamin C Package">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <span class="badge bg-success mb-2" id="product-badge">BESTSELLER</span>
+                        <h1 id="product-title">Vitamin C 1000mg Tablets</h1>
+                        <div class="rating mb-3">
+                            <span class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="text-muted ms-2" id="review-count">(24 reviews)</span>
+                            <a href="#reviews" class="ms-3 small">Write a review</a>
+                        </div>
+                        
+                        <div class="price mb-3">
+                            <span class="text-primary fw-bold" id="current-price">$12.99</span>
+                            <span class="text-muted text-decoration-line-through ms-2" id="original-price">$15.99</span>
+                            <span class="badge bg-danger ms-2" id="discount-badge">Save 19%</span>
+                        </div>
+                        
+                        <div class="availability mb-4">
+                            <span class="text-success" id="stock-status"><i class="fas fa-check-circle"></i> In Stock</span>
+                            <span class="text-muted ms-3" id="sku">SKU: VC1000-60</span>
+                        </div>
+                        
+                        <div class="product-description mb-4">
+                            <p id="short-description">High potency Vitamin C 1000mg tablets with extended release for maximum absorption and immune system support.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i> Supports immune system function</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Antioxidant protection</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Extended release formula</li>
+                                <li><i class="fas fa-check text-success me-2"></i> 60 tablets per bottle</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <div class="row g-3 align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label class="form-label">Quantity:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="input-group" style="width: 120px;">
+                                        <button class="btn btn-outline-secondary" type="button" id="decrement-qty">-</button>
+                                        <input type="number" class="form-control text-center quantity-input" value="1" min="1" max="10" id="product-qty">
+                                        <button class="btn btn-outline-secondary" type="button" id="increment-qty">+</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-primary btn-lg w-100 py-2" id="add-to-cart-btn">
+                                        <i class="fas fa-cart-plus me-2"></i> Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-heart me-2"></i> Add to Wishlist
+                                </button>
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-exchange-alt me-2"></i> Compare
+                                </button>
+                            </div>
+                            
+                            <div class="product-meta mb-4">
+                                <div class="d-flex mb-2">
+                                    <span class="text-muted me-3" style="min-width: 100px;">Category:</span>
+                                    <span id="product-category">Vitamins & Supplements</span>
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <span class="text-muted me-3" style="min-width: 100px;">Dosage:</span>
+                                    <span id="product-dosage">1000mg per tablet</span>
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <span class="text-muted me-3" style="min-width: 100px;">Form:</span>
+                                    <span id="product-form">Tablets</span>
+                                </div>
+                                <div class="d-flex">
+                                    <span class="text-muted me-3" style="min-width: 100px;">Quantity:</span>
+                                    <span id="product-quantity">60 tablets</span>
+                                </div>
+                            </div>
+                            
+                            <div class="share-buttons">
+                                <span class="text-muted me-2">Share:</span>
+                                <a href="#" class="text-muted me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-muted me-2"><i class="fab fa-pinterest"></i></a>
+                                <a href="#" class="text-muted"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients" type="button" role="tab">Ingredients</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="directions-tab" data-bs-toggle="tab" data-bs-target="#directions" type="button" role="tab">Directions</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Reviews (24)</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom" id="productTabsContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <h4>Product Description</h4>
+                            <p>Vitamin C 1000mg tablets are specially formulated to provide high potency vitamin C with extended release technology for better absorption and longer-lasting immune support. Each tablet delivers a powerful dose of antioxidant protection to help combat free radicals and support overall health.</p>
+                            <p>Our vitamin C is pharmaceutical grade and manufactured in FDA-registered facilities following strict GMP guidelines. The tablets are easy to swallow and suitable for vegetarians.</p>
+                            <h5 class="mt-4">Key Benefits:</h5>
+                            <ul>
+                                <li>Supports immune system function</li>
+                                <li>Provides antioxidant protection</li>
+                                <li>Promotes collagen production for healthy skin</li>
+                                <li>Helps with iron absorption</li>
+                                <li>Extended release for better bioavailability</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="ingredients" role="tabpanel">
+                            <h4>Ingredients</h4>
+                            <p>Each tablet contains:</p>
+                            <ul>
+                                <li>Vitamin C (as Ascorbic Acid) - 1000mg</li>
+                                <li>Rose Hips Extract - 25mg</li>
+                                <li>Bioflavonoid Complex - 25mg</li>
+                            </ul>
+                            <p><strong>Other Ingredients:</strong> Cellulose, vegetable stearate, silica, vegetable coating.</p>
+                            <p><strong>Free From:</strong> Artificial colors, artificial flavors, preservatives, yeast, gluten, milk, lactose, soy.</p>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="directions" role="tabpanel">
+                            <h4>Directions for Use</h4>
+                            <p><strong>Adults:</strong> Take one tablet daily with food, or as directed by your healthcare professional.</p>
+                            <p><strong>Storage:</strong> Store in a cool, dry place away from direct sunlight. Keep the bottle tightly closed.</p>
+                            <p><strong>Precautions:</strong> Keep out of reach of children. Do not exceed recommended dose. Consult your healthcare provider before use if you are pregnant, nursing, taking medications, or have a medical condition.</p>
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i> This product is not intended to diagnose, treat, cure or prevent any disease.
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="bg-light p-4 rounded">
+                                        <h4>Customer Reviews</h4>
+                                        <div class="text-center mb-4">
+                                            <div class="display-4 text-primary mb-1">4.6</div>
+                                            <div class="rating mb-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                            </div>
+                                            <p class="text-muted">Based on 24 reviews</p>
+                                        </div>
+                                        
+                                        <div class="rating-bars">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">5 <i class="fas fa-star text-warning small"></i></span>
+                                                <div class="progress flex-grow-1" style="height: 8px;">
+                                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                                </div>
+                                                <span class="ms-2">17</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">4 <i class="fas fa-star text-warning small"></i></span>
+                                                <div class="progress flex-grow-1" style="height: 8px;">
+                                                    <div class="progress-bar bg-warning" style="width: 20%"></div>
+                                                </div>
+                                                <span class="ms-2">5</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">3 <i class="fas fa-star text-warning small"></i></span>
+                                                <div class="progress flex-grow-1" style="height: 8px;">
+                                                    <div class="progress-bar bg-warning" style="width: 8%"></div>
+                                                </div>
+                                                <span class="ms-2">2</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="me-2">2 <i class="fas fa-star text-warning small"></i></span>
+                                                <div class="progress flex-grow-1" style="height: 8px;">
+                                                    <div class="progress-bar bg-warning" style="width: 0%"></div>
+                                                </div>
+                                                <span class="ms-2">0</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <span class="me-2">1 <i class="fas fa-star text-warning small"></i></span>
+                                                <div class="progress flex-grow-1" style="height: 8px;">
+                                                    <div class="progress-bar bg-warning" style="width: 0%"></div>
+                                                </div>
+                                                <span class="ms-2">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <h5>Write a Review</h5>
+                                        <form id="reviewForm">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Rating</label>
+                                                <div class="rating-input">
+                                                    <input type="radio" id="star5" name="rating" value="5">
+                                                    <label for="star5"><i class="fas fa-star"></i></label>
+                                                    <input type="radio" id="star4" name="rating" value="4">
+                                                    <label for="star4"><i class="fas fa-star"></i></label>
+                                                    <input type="radio" id="star3" name="rating" value="3">
+                                                    <label for="star3"><i class="fas fa-star"></i></label>
+                                                    <input type="radio" id="star2" name="rating" value="2">
+                                                    <label for="star2"><i class="fas fa-star"></i></label>
+                                                    <input type="radio" id="star1" name="rating" value="1">
+                                                    <label for="star1"><i class="fas fa-star"></i></label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="reviewTitle" class="form-label">Review Title</label>
+                                                <input type="text" class="form-control" id="reviewTitle" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="reviewText" class="form-label">Your Review</label>
+                                                <textarea class="form-control" id="reviewText" rows="4" required></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="reviewerName" class="form-label">Your Name</label>
+                                                <input type="text" class="form-control" id="reviewerName" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-7">
+                                    <div class="review-list">
+                                        <div class="review-card">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h5>Great immune support</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted small mb-2">By Sarah J. on March 15, 2023</div>
+                                            <p>I've been taking these vitamin C tablets for 3 months now and I've noticed a significant improvement in my immune system. I haven't caught a cold all winter!</p>
+                                        </div>
+                                        
+                                        <div class="review-card">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h5>Easy to swallow</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted small mb-2">By Michael T. on February 28, 2023</div>
+                                            <p>The tablets are a good size and easy to swallow. I like that they're extended release so I don't get that acidic feeling in my stomach.</p>
+                                        </div>
+                                        
+                                        <div class="review-card">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h5>Good value</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="far fa-star text-warning"></i>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted small mb-2">By Emily R. on January 10, 2023</div>
+                                            <p>Compared to other brands, this offers good value for money. The bottle lasts me two months taking one daily.</p>
+                                        </div>
+                                        
+                                        <div class="text-center mt-3">
+                                            <button class="btn btn-outline-primary">Load More Reviews</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="mb-4">You May Also Like</h3>
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                        <div class="col">
+                            <div class="card h-100 related-product border-0 shadow-sm">
+                                <div class="position-relative" style="height: 200px; background-color: #f8f9fa;">
+                                    <img src="images/products/vitamin-d-vertical.jpg" class="card-img-top h-100 w-auto mx-auto p-2" alt="Vitamin D">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-2 d-flex justify-content-center opacity-0">
+                                        <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-1">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </a>
+                                        <a href="product-detail.html?id=2" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vitamin D3 2000IU</h5>
+                                    <div class="price text-primary fw-bold">$14.99</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="card h-100 related-product border-0 shadow-sm">
+                                <div class="position-relative" style="height: 200px; background-color: #f8f9fa;">
+                                    <img src="images/products/zinc-vertical.jpg" class="card-img-top h-100 w-auto mx-auto p-2" alt="Zinc Supplements">
+                                    <span class="position-absolute top-0 end-0 bg-success text-white px-2 py-1 m-1 small rounded-pill">NEW</span>
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-2 d-flex justify-content-center opacity-0">
+                                        <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-1">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </a>
+                                        <a href="product-detail.html?id=3" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Zinc + Vitamin C</h5>
+                                    <div class="price text-primary fw-bold">$9.99</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="card h-100 related-product border-0 shadow-sm">
+                                <div class="position-relative" style="height: 200px; background-color: #f8f9fa;">
+                                    <img src="images/products/multivitamin-vertical.jpg" class="card-img-top h-100 w-auto mx-auto p-2" alt="Multivitamin">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-2 d-flex justify-content-center opacity-0">
+                                        <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-1">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </a>
+                                        <a href="product-detail.html?id=4" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Daily Multivitamin</h5>
+                                    <div class="price text-primary fw-bold">$15.99</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="card h-100 related-product border-0 shadow-sm">
+                                <div class="position-relative" style="height: 200px; background-color: #f8f9fa;">
+                                    <img src="images/products/elderberry-vertical.jpg" class="card-img-top h-100 w-auto mx-auto p-2" alt="Elderberry">
+                                    <span class="position-absolute top-0 end-0 bg-danger text-white px-2 py-1 m-1 small rounded-pill">BESTSELLER</span>
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-2 d-flex justify-content-center opacity-0">
+                                        <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 me-1">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </a>
+                                        <a href="product-detail.html?id=5" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Elderberry Immune Support</h5>
+                                    <div class="price text-primary fw-bold">$18.99</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <img src="image/logo.png" alt="MediCare Pharmacy" class="footer-logo mb-3 img-fluid" width="180">
+                        <p class="text-white-50">Your trusted partner in health since 2005. We're committed to providing quality healthcare products and services to our community.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-2" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white me-2" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Home</a></li>
+                            <li class="mb-2"><a href="products.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Products</a></li>
+                            <li class="mb-2"><a href="services.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Services</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> About Us</a></li>
+                            <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Customer Service</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> FAQs</a></li>
+                            <li class="mb-2"><a href="shipping.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Shipping Policy</a></li>
+                            <li class="mb-2"><a href="returns.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Returns & Refunds</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="mb-4 position-relative pb-2 text-white">Contact Us</h4>
+                        <ul class="list-unstyled contact-info">
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-map-marker-alt me-3 mt-1 text-primary"></i> <span>123 Medical Street, Health City, HC 12345</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-phone-alt me-3 mt-1 text-primary"></i> <span>(123) 456-7890</span></li>
+                            <li class="mb-3 d-flex text-white"><i class="fas fa-envelope me-3 mt-1 text-primary"></i> <span>info@medicarepharmacy.com</span></li>
+                            <li class="d-flex text-white"><i class="fas fa-clock me-3 mt-1 text-primary"></i> <span>Mon-Sat: 8:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright text-center mt-5 pt-3 border-top border-secondary">
+                <p class="mb-0 text-white-50">&copy; 2023 MediCare Pharmacy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainProductImage').src = src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        document.getElementById('increment-qty').addEventListener('click', function() {
+            const qtyInput = document.getElementById('product-qty');
+            let qty = parseInt(qtyInput.value);
+            if (qty < 10) qtyInput.value = qty + 1;
+        });
+        
+        document.getElementById('decrement-qty').addEventListener('click', function() {
+            const qtyInput = document.getElementById('product-qty');
+            let qty = parseInt(qtyInput.value);
+            if (qty > 1) qtyInput.value = qty - 1;
+        });
+        
+        document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+            const productName = document.getElementById('product-title').textContent;
+            const quantity = document.getElementById('product-qty').value;
+            const price = document.getElementById('current-price').textContent;
+            
+            alert(`Added ${quantity} ${productName} to cart for ${price} each`);
+            
+            const cartCount = document.querySelector('.cart-count');
+            if (cartCount) {
+                const currentCount = parseInt(cartCount.textContent);
+                cartCount.textContent = currentCount + parseInt(quantity);
+            }
+        });
+        
+        const stars = document.querySelectorAll('.rating-input input');
+        stars.forEach(star => {
+            star.addEventListener('change', function() {
+                const rating = this.value;
+                console.log(`Rating selected: ${rating}`);
+            });
+        });
+        
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your review! It will be published after moderation.');
+            this.reset();
+        });
+        
+        function loadProductData(productId) {
+            console.log(`Loading product data for ID: ${productId}`);
+            
+            /*
+            fetch(`/api/products/${productId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('product-title').textContent = data.name;
+                    document.getElementById('current-price').textContent = `$${data.price}`;
+                });
+            */
+        }
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            if (productId) {
+                loadProductData(productId);
+            }
+        });
+    </script>
+</body>
+</html>

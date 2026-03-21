@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Pharmacy - Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a href="index.html"><img src="image/logo.png" class="tanishka-logo" alt="logo" /></a>
+                <a class="navbar-brand" href="index.html">MediCare Pharmacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="products.html?category=all">All Products</a>
+                                <a class="dropdown-item" href="products.html?category=prescription">Prescription Medicines</a>
+                                <a class="dropdown-item" href="products.html?category=otc">Over-the-Counter</a>
+                                <a class="dropdown-item" href="products.html?category=vitamins">Vitamins & Supplements</a>
+                                <a class="dropdown-item" href="products.html?category=personal">Personal Care</a>
+                                <a class="dropdown-item" href="products.html?category=baby">Baby Care</a>
+                                <a class="dropdown-item" href="products.html?category=elderly">Elderly Care</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+            
+                    <div class="search-box me-3">
+                        <input type="text" placeholder="Search medicines...">
+                        <button type="button" title="Search">
+                            <i class="fas fa-search"></i>
+                            <span class="visually-hidden">Search</span>
+                        </button>
+                    </div>
+                    
+                    <div class="dropdown ms-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle fs-4 text-primary"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                            <li><h6 class="dropdown-header">My Account</h6></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i> Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus me-2"></i> Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="my-account.html"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="bi bi-box-seam me-2"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="prescriptions.html"><i class="bi bi-file-earmark-medical me-2"></i> My Prescriptions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-icon position-relative ms-3" title="View Cart">
+                        <i class="bi bi-cart3 fs-4"></i>
+                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        <span class="visually-hidden">View Cart</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <section class="page-header py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="mb-3">Our Products</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Products</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0">Showing <span id="showing-count">1-12</span> of <span id="total-count">48</span> products</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Categories</h5>
+                            <ul class="list-unstyled category-list">
+                                <li class="mb-2"><a href="products.html?category=all" class="active">All Products</a></li>
+                                <li class="mb-2"><a href="products.html?category=prescription">Prescription Medicines</a></li>
+                                <li class="mb-2"><a href="products.html?category=otc">Over-the-Counter</a></li>
+                                <li class="mb-2"><a href="products.html?category=vitamins">Vitamins & Supplements</a></li>
+                                <li class="mb-2"><a href="products.html?category=personal">Personal Care</a></li>
+                                <li class="mb-2"><a href="products.html?category=baby">Baby Care</a></li>
+                                <li class="mb-2"><a href="products.html?category=elderly">Elderly Care</a></li>
+                            </ul>
+                            
+                            <hr class="my-4">
+                            
+                            <h5 class="card-title mb-4">Filter by Price</h5>
+                            <div id="price-slider" class="mb-4"></div>
+                            <div class="d-flex justify-content-between">
+                                <span id="price-min">₹40</span>
+                                <span id="price-max">₹5000</span>
+                            </div>
+                            
+                            <hr class="my-4">
+                            
+                            <h5 class="card-title mb-4">Brands</h5>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="brand1" checked>
+                                <label class="form-check-label" for="brand1">Pfizer</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="brand2" checked>
+                                <label class="form-check-label" for="brand2">Johnson & Johnson</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="brand3" checked>
+                                <label class="form-check-label" for="brand3">GSK</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="brand4" checked>
+                                <label class="form-check-label" for="brand4">Novartis</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="brand5" checked>
+                                <label class="form-check-label" for="brand5">Bayer</label>
+                            </div>
+                            
+                            <hr class="my-4">
+                            
+                            <button class="btn btn-outline-primary w-100">Reset Filters</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Featured Products</h5>
+                            
+                            <div class="featured-product-item d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="image/vitaminC.webp" alt="Product" width="70">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1"><a href="product-detail.html">Vitamin C 1000mg</a></h6>
+                                    <div class="rating small text-warning mb-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="price text-primary">₹180</div>
+                                </div>
+                            </div>
+                            
+                            <div class="featured-product-item d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="image/pain.webp" alt="Product" width="70">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1"><a href="product-detail.html">Pain Relief Tablets</a></h6>
+                                    <div class="rating small text-warning mb-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="price text-primary">₹45.99</div>
+                                </div>
+                            </div>
+                            
+                            <div class="featured-product-item d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="image/multivit.webp" alt="Product" width="70">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1"><a href="product-detail.html">Daily Multivitamin</a></h6>
+                                    <div class="rating small text-warning mb-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="price text-primary">₹399</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Listing -->
+                <div class="col-lg-9">
+                    <div class="product-listing-header mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="view-options d-flex align-items-center">
+                                    <span class="me-2">View:</span>
+                                    <button class="btn btn-sm btn-outline-secondary active me-2"><i class="fas fa-th-large"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary me-2"><i class="fas fa-th-list"></i></button>
+                                    <span class="d-none d-md-inline">Showing all products</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <div class="sort-options">
+                                    <label for="sort" class="me-2">Sort by:</label>
+                                    <select class="form-select form-select-sm d-inline-block w-auto" id="sort">
+                                        <option selected>Default</option>
+                                        <option>Price: Low to High</option>
+                                        <option>Price: High to Low</option>
+                                        <option>Most Popular</option>
+                                        <option>Newest First</option>
+                                        <option>Customer Rating</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-4 product-grid">
+                        <!-- Product Item 1 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="prescription" data-price="45.99">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-danger position-absolute top-0 end-0 m-2">Prescription</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/amoxicillin.jpg" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=6" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=6">Amoxicillin 500mg Capsules</a></h5>
+                                    <div class="price text-primary fw-bold">₹369</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="text-muted ms-2">(18)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Antibiotic for bacterial infections</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 2 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="otc" data-price="8.99">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-info position-absolute top-0 end-0 m-2">OTC</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/pain.webp" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=2" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=2">Pain Relief Tablets</a></h5>
+                                    <div class="price text-primary fw-bold">₹45.99</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="text-muted ms-2">(36)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Fast-acting pain relief for headaches and minor aches</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 3 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="vitamins" data-price="15.99">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-success position-absolute top-0 end-0 m-2">Vitamins</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/multivit.webp" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=3" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=3">Daily Multivitamin</a></h5>
+                                    <div class="price text-primary fw-bold">₹399</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="text-muted ms-2">(18)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Complete multivitamin for daily nutritional support</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 4 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="personal" data-price="12.49">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-warning position-absolute top-0 end-0 m-2">Personal Care</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/Cetaphil.webp" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=7" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=7">Moisturizing Lotion</a></h5>
+                                    <div class="price text-primary fw-bold">₹1200</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="text-muted ms-2">(24)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Deep hydration for dry skin, fragrance-free</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 5 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="baby" data-price="18.99">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-primary position-absolute top-0 end-0 m-2">Baby Care</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/baby.jpeg" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=8" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=8">Baby Diaper Rash Cream</a></h5>
+                                    <div class="price text-primary fw-bold">₹118</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="text-muted ms-2">(42)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Zinc oxide formula for diaper rash prevention</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 6 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="elderly" data-price="22.99">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-secondary position-absolute top-0 end-0 m-2">Elderly Care</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/supplement.webp" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=9" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=9">Joint Support Formula</a></h5>
+                                    <div class="price text-primary fw-bold">₹249</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="text-muted ms-2">(31)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Glucosamine & chondroitin for joint health</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 7 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="prescription" data-price="32.50">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-danger position-absolute top-0 end-0 m-2">Prescription</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/Atorvastatin.webp" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=10" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=10">Atorvastatin 20mg Tablets</a></h5>
+                                    <div class="price text-primary fw-bold">₹165</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="text-muted ms-2">(27)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Cholesterol-lowering medication</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 8 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="otc" data-price="10.49">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-info position-absolute top-0 end-0 m-2">OTC</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/allergy.jpeg" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=4" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=4">Allergy Relief</a></h5>
+                                    <div class="price text-primary fw-bold">₹246.5</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="text-muted ms-2">(12)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">24-hour relief from allergy symptoms</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Item 9 -->
+                        <div class="col-md-6 col-lg-4 product-item" data-category="vitamins" data-price="12.99">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="badge bg-success position-absolute top-0 end-0 m-2">Vitamins</div>
+                                <div class="product-thumb position-relative overflow-hidden">
+                                    <img src="image/vitaminC.webp" class="card-img-top" alt="Product">
+                                    <div class="product-actions position-absolute bottom-0 start-0 end-0 bg-white p-3 d-flex justify-content-between">
+                                        <a href="#" class="btn-add-to-cart btn btn-sm btn-primary">Add to Cart</a>
+                                        <a href="product-detail.html?id=1" class="btn-view-details btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="product-detail.html?id=1">Vitamin C 1000mg</a></h5>
+                                    <div class="price text-primary fw-bold">₹95</div>
+                                    <div class="rating text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="text-muted ms-2">(24)</span>
+                                    </div>
+                                    <p class="card-text small text-muted mt-2">Immune system support with rose hips</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="mb-4">Get the latest updates on health tips, new products, and exclusive offers.</p>
+                    <form class="newsletter-form mx-auto form-max-width">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required>
+                            <button class="btn btn-primary" type="submit">Subscribe <i class="fas fa-paper-plane ms-2"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <img src="image/logo.png" alt="MediCare Pharmacy" class="footer-logo mb-3 img-fluid" width="180">
+                    <p class="text-white-50">Your trusted partner in health since 2005. We're committed to providing quality healthcare products and services to our community.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-2" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white me-2" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white me-2" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white me-2" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h4 class="mb-4 position-relative pb-2 text-white">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Home</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Products</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Services</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> About Us</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h4 class="mb-4 position-relative pb-2 text-white">Customer Service</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> FAQs</a></li>
+                        <li class="mb-2"><a href="shipping.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Shipping Policy</a></li>
+                        <li class="mb-2"><a href="returns.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Returns & Refunds</a></li>
+                        <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Privacy Policy</a></li>
+                        <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-primary small"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h4 class="mb-4 position-relative pb-2 text-white">Contact Us</h4>
+                    <ul class="list-unstyled contact-info">
+                        <li class="mb-3 d-flex text-white"><i class="fas fa-map-marker-alt me-3 mt-1 text-primary"></i> <span>123 Medical Street, Health City, HC 12345</span></li>
+                        <li class="mb-3 d-flex text-white"><i class="fas fa-phone-alt me-3 mt-1 text-primary"></i> <span>(123) 456-7890</span></li>
+                        <li class="mb-3 d-flex text-white"><i class="fas fa-envelope me-3 mt-1 text-primary"></i> <span>info@medicarepharmacy.com</span></li>
+                        <li class="d-flex text-white"><i class="fas fa-clock me-3 mt-1 text-primary"></i> <span>Mon-Sat: 8:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright text-center mt-5 pt-3 border-top border-secondary">
+            <p class="mb-0 text-white-50">&copy; 2023 MediCare Pharmacy. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript Files -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Slick Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- jQuery UI (for price slider) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+        // Initialize price slider
+        $("#price-slider").slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [10, 500],
+            slide: function(event, ui) {
+                $("#price-min").text('$' + ui.values[0]);
+                $("#price-max").text('$' + ui.values[1]);
+                filterProducts();
+            }
+        });
+        
+        // Filter products based on category from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        if(category) {
+            // Update active category in sidebar
+            $('.category-list li a').removeClass('active');
+            $(`.category-list li a[href="products.html?category=${category}"]`).addClass('active');
+            
+            // Filter products
+            if(category !== 'all') {
+                $('.product-item').hide();
+                $(`.product-item[data-category="${category}"]`).show();
+                updateShowingCount();
+            }
+        }
+        
+        // Filter products based on price range
+        function filterProducts() {
+            var minPrice = $("#price-slider").slider("values", 0);
+            var maxPrice = $("#price-slider").slider("values", 1);
+            
+            $('.product-item').each(function() {
+                var price = parseFloat($(this).attr('data-price'));
+                if(price >= minPrice && price <= maxPrice) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+            
+            updateShowingCount();
+        }
+        
+        // Update showing count
+        function updateShowingCount() {
+            const visibleCount = $('.product-item:visible').length;
+            const totalCount = $('.product-item').length;
+            $('#showing-count').text(`1-${visibleCount}`);
+            $('#total-count').text(totalCount);
+        }
+        
+        // Sort products
+        $('#sort').change(function() {
+            const sortBy = $(this).val();
+            const $container = $('.product-grid');
+            const $items = $('.product-item');
+            
+            $items.sort(function(a, b) {
+                const aPrice = parseFloat($(a).attr('data-price'));
+                const bPrice = parseFloat($(b).attr('data-price'));
+                const aRating = parseFloat($(a).find('.rating i.fas').length);
+                const bRating = parseFloat($(b).find('.rating i.fas').length);
+                
+                switch(sortBy) {
+                    case 'Price: Low to High':
+                        return aPrice - bPrice;
+                    case 'Price: High to Low':
+                        return bPrice - aPrice;
+                    case 'Customer Rating':
+                        return bRating - aRating;
+                    default:
+                        return 0;
+                }
+            });
+            
+            $items.detach().appendTo($container);
+        });
+    });
+    </script>
+</body>
+</html>
